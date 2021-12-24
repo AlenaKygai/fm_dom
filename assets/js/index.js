@@ -9,5 +9,22 @@ const imagesDB = [
   'https://64.media.tumblr.com/ae500a0f115f365a32e525fd1fd386b2/a8d6d1fd12d40dbc-8e/s500x750/bf566093f42fba33f49045ffe5ef83a224f466a3.jpg'
 ];
 
-const img = document.querySelector('.slide>img');
+const slider = new Slider(imagesDB);
+
+const image = document.querySelector('.slide>img');
 const [prevBtn, nextBtn] = document.querySelectorAll('.slider-container>button');
+
+function updateView(){
+  image.setAttribute('src' , slider.currentSlide);
+}
+updateView();
+
+nextBtn.addEventListener('click', ()=>{
+  slider.currentIndex = slider.next();
+  updateView();
+});
+
+prevBtn.addEventListener('click', ()=>{
+  slider.currentIndex = slider.prev();
+  updateView();
+});

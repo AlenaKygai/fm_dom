@@ -1,9 +1,9 @@
 
 
 class Slider{
-  constructor(images=[], currentIndex=0){
+  constructor(images, currentIndex=0){
     this._images = images;
-    this._currentIndex = currentIndex;
+    this.currentIndex = currentIndex;
   }
   get images(){
     return this._images;
@@ -12,8 +12,8 @@ class Slider{
     return this._currentIndex;
   }
   set currentIndex(v){
-    if(typeof v !=='number' || Number.isInteger(v) || v<0){
-      throw new TypeError();
+    if(typeof v !== 'number' || Number.isInteger(v)===false || v<0){
+      throw new TypeError('Type Error');
     }
     this._currentIndex = v;
   }
@@ -21,9 +21,9 @@ class Slider{
     return this._images[this.currentIndex];
   }
   next(){
-    return this._currentIndex+1;
+    return (this._currentIndex+1)%this._images.length;
   }
   prev(){
-    return this._currentIndex-1;
+    return (this._currentIndex-1+this._images.length)%this._images.length;
   }
 }
