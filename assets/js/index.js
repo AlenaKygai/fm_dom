@@ -25,3 +25,17 @@ const btnSliderHandler = (direction = 'next') =>() =>{
 }
 nextBtn.addEventListener('click',btnSliderHandler('next'));
 prevBtn.addEventListener('click',btnSliderHandler('prev'));
+
+
+/*------------------------------------------------------------------------ */
+
+const uniqueBtn = document.getElementById('unique');
+uniqueBtn.addEventListener('click' , btnUniqueHandler);
+
+function btnUniqueHandler(eventObject){
+  console.log(eventObject);
+  uniqueBtn.removeEventListener('click' , btnUniqueHandler);
+  uniqueBtn.disabled = true;
+}
+
+uniqueBtn.dispatchEvent(new MouseEvent('click'));
