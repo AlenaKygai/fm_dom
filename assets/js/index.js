@@ -32,14 +32,13 @@ prevBtn.addEventListener('click',btnSliderHandler('prev'));
 const uniqueBtn = document.getElementById('unique');
 
 uniqueBtn.addEventListener('click' , (e) =>{
-  console.log(e.target.innerText);
-  console.log(e.target.textContent);
+  console.log(e.target, e.target.innerText);
+  console.log(e.currentTarget.textContent ,e.target.textContent);
 });
 
 document.body.addEventListener('click' , btnUniqueHandler);
 
 function btnUniqueHandler(e){
-  e = e || event;
   console.log(this.innerText);
   console.log(this.textContent);
 }
