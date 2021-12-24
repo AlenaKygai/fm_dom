@@ -30,10 +30,18 @@ prevBtn.addEventListener('click',btnSliderHandler('prev'));
 /*------------------------------------------------------------------------ */
 
 const uniqueBtn = document.getElementById('unique');
-uniqueBtn.addEventListener('click' , btnUniqueHandler);
 
-function btnUniqueHandler(eventObject){
-  console.log(eventObject.target.innerText);
+uniqueBtn.addEventListener('click' , (e) =>{
+  console.log(e.target.innerText);
+  console.log(e.target.textContent);
+});
+
+document.body.addEventListener('click' , btnUniqueHandler);
+
+function btnUniqueHandler(e){
+  e = e || event;
+  console.log(this.innerText);
+  console.log(this.textContent);
 }
 
 
