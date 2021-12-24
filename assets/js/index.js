@@ -19,12 +19,9 @@ function updateView(){
 }
 updateView();
 
-nextBtn.addEventListener('click', ()=>{
-  slider.currentIndex = slider.next();
+const btnSliderHandler = (direction = 'next') =>() =>{
+  slider.currentIndex = slider[direction === 'next' ? 'nextIndex' : 'prevIndex'];
   updateView();
-});
-
-prevBtn.addEventListener('click', ()=>{
-  slider.currentIndex = slider.prev();
-  updateView();
-});
+}
+nextBtn.addEventListener('click',btnSliderHandler('next'));
+prevBtn.addEventListener('click',btnSliderHandler('prev'));
