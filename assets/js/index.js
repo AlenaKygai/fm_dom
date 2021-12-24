@@ -29,18 +29,27 @@ prevBtn.addEventListener('click',btnSliderHandler('prev'));
 
 /*------------------------------------------------------------------------ */
 
-const uniqueBtn = document.getElementById('unique');
+// const uniqueImg = document.getElementById('unique');
 
-uniqueBtn.addEventListener('click' , (e) =>{
-  console.log(e.target, e.target.innerText);
-  console.log(e.currentTarget.textContent ,e.target.textContent);
-});
+// const strAttr = document.createAttribute('src');
+// strAttr.value = imagesDB[0];
 
-document.body.addEventListener('click' , btnUniqueHandler);
+// uniqueImg.setAttributeNode(strAttr);
 
-function btnUniqueHandler(e){
-  console.log(this.innerText);
-  console.log(this.textContent);
+/* 
+По клику на кнопку показывать чередованием одну из двух картинок.
+*/
+
+
+const uniqueBtn = document.getElementById('uniqueBtn');
+const uniqueImg = document.getElementById('uniqueImg');
+
+uniqueImg.src = imagesDB[0];
+
+uniqueBtn.addEventListener('click', changeImage);
+
+let isFirstClick = true;
+function changeImage(){
+  uniqueImg.src = imagesDB[isFirstClick ? 1 : 0];
+  isFirstClick = !isFirstClick;
 }
-
-

@@ -38,3 +38,13 @@
 .btn-next{
   right: 0;
 }
+#uniqueBtn{
+  position: fixed;
+}
+#uniqueImg{
+  width: 50vw;
+  height: 50vh;
+  margin: auto;
+  display: flex;
+  object-fit: cover;
+}
