@@ -33,9 +33,7 @@ const uniqueBtn = document.getElementById('unique');
 uniqueBtn.addEventListener('click' , btnUniqueHandler);
 
 function btnUniqueHandler(eventObject){
-  console.log(eventObject);
-  uniqueBtn.removeEventListener('click' , btnUniqueHandler);
-  uniqueBtn.disabled = true;
+  console.log(eventObject.target.innerText);
 }
 
-uniqueBtn.dispatchEvent(new MouseEvent('click'));
+
