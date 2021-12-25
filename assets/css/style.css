@@ -38,7 +38,7 @@
 .btn-next{
   right: 0;
 }
-#uniqueBtn{
+/* #uniqueBtn{
   position: fixed;
 }
 #uniqueImg{
@@ -47,4 +47,4 @@
   margin: auto;
   display: flex;
   object-fit: cover;
-}
+} */

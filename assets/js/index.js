@@ -1,6 +1,4 @@
 'use strict';
-
-//очень широка, очень узкая,квадратная,альбомная,книжная
 const imagesDB = [
   'https://www.bef-de.org/wp-content/uploads/2019/02/Land-Sea-Act-e1556549333320.jpg',
   'https://i.pinimg.com/originals/20/4d/46/204d46dee220046cd405fb677ef84840.jpg',
@@ -26,6 +24,11 @@ const btnSliderHandler = (direction = 'next') =>() =>{
 nextBtn.addEventListener('click',btnSliderHandler('next'));
 prevBtn.addEventListener('click',btnSliderHandler('prev'));
 
+image.addEventListener('wheel', (e)=>{
+  // const handler = e.deltaY> 0 ? btnSliderHandler('next') : btnSliderHandler('prev');
+  // handler();
+  e.deltaY> 0 ? btnSliderHandler('next')() : btnSliderHandler('prev')();
+})
 
 /*------------------------------------------------------------------------ */
 
@@ -41,15 +44,15 @@ prevBtn.addEventListener('click',btnSliderHandler('prev'));
 */
 
 
-const uniqueBtn = document.getElementById('uniqueBtn');
-const uniqueImg = document.getElementById('uniqueImg');
+// const uniqueBtn = document.getElementById('uniqueBtn');
+// const uniqueImg = document.getElementById('uniqueImg');
 
-uniqueImg.src = imagesDB[0];
+// uniqueImg.src = imagesDB[0];
 
-uniqueBtn.addEventListener('click', changeImage);
+// uniqueBtn.addEventListener('click', changeImage);
 
-let isFirstClick = true;
-function changeImage(){
-  uniqueImg.src = imagesDB[isFirstClick ? 1 : 0];
-  isFirstClick = !isFirstClick;
-}
+// let isFirstClick = true;
+// function changeImage(){
+//   uniqueImg.src = imagesDB[isFirstClick ? 1 : 0];
+//   isFirstClick = !isFirstClick;
+// }
