@@ -1,24 +1,16 @@
 'use strict';
 
 const btns = document.querySelectorAll('button');
+const content = document.getElementsByClassName('flex-content')[0];
 
-const changeColor = ({
+const selectDirection = ({
   target: {
-    dataset: { color },
-    parentNode: parentRoot,
+    dataset: { direction },
   }
 }) => {
-  parentRoot.style.backgroundColor = color;
-}
-const handler = ({currentTarget})=>{
-  console.log(currentTarget , 'dipping');
+  content.style.flexDirection = direction;
 }
 
 for (const btn of btns) {
-  btn.addEventListener('click', changeColor);
+  btn.addEventListener('click', selectDirection);
 }
-
-document.getElementById('root').addEventListener('click', handler, {capture:true, once:true});
-document.body.addEventListener('click', handler, true);
-document.addEventListener('click', handler, true);
-window.addEventListener('click', handler, true);

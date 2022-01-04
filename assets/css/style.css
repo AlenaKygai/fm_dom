@@ -1,8 +1,43 @@
-#root{
-  width: 50vw;
-  height: 100px;
-  border: 3px solid #111;
+.flex-container{
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  width: 50vw;
+  margin: 0 auto;
+  font-family: serif;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.flex-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.flex-buttons > button{
+  width: 100%;
+  padding: 0.5em 1em;
+  background-color: white;
+  border: 2px solid cornflowerblue;
+  font-size: 1.1em;
+
+}
+.flex-buttons > button:hover{
+  background-color: cornflowerblue;
+  color: white;
+}
+.flex-content{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  padding: 2px 0;
+  height: 200px;
+  border: 2px solid cornflowerblue;
+}
+.content-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  padding: 0.5em;
+  background-color: cornflowerblue;
+  color: blue;
 }
