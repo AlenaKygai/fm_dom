@@ -16,7 +16,7 @@ function createActorCards(actor){
 
   const initials = document.createElement('div');
   initials.classList.add('initials');
-  initials.append(document.createTextNode(actor.name[0] || 'noname'));
+  initials.append(document.createTextNode(getInitials(actor.name) || 'noname'));
   initials.style.backgroundColor = stringToColour(actor.name || '');
 
   const img = document.createElement('img');
@@ -60,4 +60,10 @@ function stringToColour(str){
     colour += ('00' + value.toString(16)).substr(-2);
   }
   return colour;
+}
+
+
+function getInitials(fullName){
+  const [name, sName] = fullName.trim().split(' ');
+  return `${name.charAt(0)}${sName.charAt(0)}`;
 }
