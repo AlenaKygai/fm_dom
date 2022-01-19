@@ -11,7 +11,7 @@ form.addEventListener('submit', (e) => {
 
   const inputValue = textInput.value.trim();
   // const validator = /^[A-Z][a-z]{3,12} [A-Z][a-z]{2,17}$/;
-  const validator = /^[А-Я][а-я]{3,12} ([А-Я]\.){2}$/;
+  const validator = /^.*(\.jpg|\.png)$/;
   //добавлять значение инпута в массив, если оно не пустое
   //и соответствует строке типа Name Sname
   if(validator.test(inputValue)) {
