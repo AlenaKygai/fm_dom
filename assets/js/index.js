@@ -10,16 +10,20 @@ form.addEventListener('submit', (e) => {
   const { target: { textInput} } = e;
 
   const inputValue = textInput.value.trim();
-
+  // const validator = /^[A-Z][a-z]{3,12} [A-Z][a-z]{2,17}$/;
+  const validator = /^[А-Я][а-я]{3,12} ([А-Я]\.){2}$/;
   //добавлять значение инпута в массив, если оно не пустое
-  if(inputValue) {
-    messageArray.push(inputValue);
-    const li = createElement('li', { classNames:['item'] }, inputValue);
-    ul.append(li);
-    // после добавления - очищать форму
-    form.reset();
-    textInput.focus();
-  }
+  //и соответствует строке типа Name Sname
+  if(validator.test(inputValue)) {
+      messageArray.push(inputValue);
+      const li = createElement('li', { classNames:['item'] }, inputValue);
+      ul.append(li);
+      // после добавления - очищать форму
+      form.reset();
+      textInput.focus();
+    }else{
+      console.log('Wrong format data');
+    }
 })
 
 function createElement(type,{classNames}, ...children){
