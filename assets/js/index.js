@@ -11,10 +11,10 @@ form.addEventListener('submit', (e) => {
 
   const inputValue = textInput.value.trim();
   // const validator = /^[A-Z][a-z]{3,12} [A-Z][a-z]{2,17}$/;
-  const validator = /^.*(\.jpg|\.png)$/;
+  const validatorForImages = /^[^><"'?!\\ \/:;*\|«+]*\.(jpg|png)$/;
   //добавлять значение инпута в массив, если оно не пустое
   //и соответствует строке типа Name Sname
-  if(validator.test(inputValue)) {
+  if(validatorForImages.test(inputValue)) {
       messageArray.push(inputValue);
       const li = createElement('li', { classNames:['item'] }, inputValue);
       ul.append(li);
