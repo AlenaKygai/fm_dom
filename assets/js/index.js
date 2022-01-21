@@ -23,7 +23,7 @@ clearTimeout(identificatore);
 function counterFirsVariant(){
   for (let i = 1; i <= 10; i++) {
       (function(index) {
-          setTimeout(function() { console.log(i) }, i * 1000);
+          setTimeout(function() { console.log(i) }, i * 500);
       })(i);
   }
 }
@@ -33,19 +33,19 @@ function counterSecondVariant(i){
   setTimeout(()=>{
     console.log(i);
       if(i<10) {
-          counterSecondVariant(++i);
+        counterSecondVariant(++i);
       }
-    },500)
+  },500)
 }
 // counterSecondVariant(1);
 
 
 function counterThirdVariant(i){
-  setTimeout(() => {
+  setTimeout(()=>{
     console.log(i)
-    if(i === 0) {
-      counterThirdVariant(--i);
-    }
+      if(i === 0){
+        counterThirdVariant(--i);
+      }
   }, 500);
 }
 
